@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 
 class SearchInput extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: ''
+    };
+  }
+
+  handleChange = (location) => {
+    this.props.location = location
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -11,6 +22,7 @@ class SearchInput extends Component {
           placeholderTextColor='white'
           style={styles.textInput}
           clearButtonMode='always'
+          onChangeText={this.handleChange}
         />
       </View>
     )

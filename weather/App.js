@@ -14,6 +14,8 @@ import SearchInput from './components/SearchInput';
 
 class App extends Component {
   render() {
+    const location = 'Pound Town';
+
     return (
       <KeyboardAvoidingView style={styles.container} behavior='padding'>
         <ImageBackground
@@ -23,7 +25,7 @@ class App extends Component {
         >
         <View style={styles.detailsContainer}>
           <Text style={[styles.largeText, styles.textStyle]}>
-            Los Angeles
+            {location}
           </Text>
           <Text style={[styles.smallText, styles.textStyle]}>
           Light Cloud
