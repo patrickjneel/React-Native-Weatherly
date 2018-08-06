@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { 
+  StyleSheet, 
+  Text,
+  KeyboardAvoidingView, 
+  Platform,
+  TextInput, 
+  View, 
+} from 'react-native';
 
 class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Fuck it eijfk</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Text style={[styles.largeText, styles.textStyle]}>Los Angeles</Text>
+        <Text style={[styles.smallText, styles.textStyle]}>Light Cloud</Text>
+        <Text style={[styles.largeText, styles.textStyle]}>24°</Text>
       </View>
     );
   }
@@ -20,6 +27,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+    textStyle: {
+      textAlign: 'center',
+      fontFamily: Platform.OS === 'ios' ? 'AvenirNext-Regular' : 'Roboto',
+    },
+    largeText: {
+      fontSize: 44,
+    },
+    smallText: {
+      fontSize: 18,
+    }
 });
 
 export default App;
