@@ -6,10 +6,11 @@ class SearchInput extends Component {
     return (
       <View style={styles.container}>
         <TextInput
-            autoCorrect={false}
-            placeholderTextColor='white'
-            style={styles.textInput}
-            clearButtonMode='always'
+          autoCorrect={false}
+          placeholder={this.props.placeholder}
+          placeholderTextColor='white'
+          style={styles.textInput}
+          clearButtonMode='always'
         />
       </View>
     )
