@@ -9,22 +9,33 @@ class SearchInput extends Component {
     };
   }
 
-  handleChange = text => {
+  handleChangeText = text => {
     this.setState({ text });
+  }
+
+  handleSubmitEditing = () => {
+    const { onSubmit } = this.props;
+    const { text } = this.state;
+
+    if(!text) return;
+
+    onSubmit(text);
+    this.setState({ text: '' });
   }
 
   render() {
     const { placeholder } = this.props;
+    const { text } = this.state;
     return (
       <View style={styles.container}>
         <TextInput
           autoCorrect={false}
-          value={this.state.text}
+          value={text}
           placeholder={placeholder}
           placeholderTextColor='white'
           style={styles.textInput}
           clearButtonMode='always'
-          onChangeText={this.handleChange}
+          onChangeText={this.handleChangeText}
           onSubmitEditing={this.handleSubmitEditing}
         />
       </View>

@@ -11,19 +11,23 @@ import {
 import SearchInput from './components/SearchInput';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      location: 'Los Angeles'
+      location: ''
     };
   }
 
-  componentDidMount() {
+  handleUpdateLocation = city => {
+    this.setState({ location: city })
+  }
 
+  componentDidMount() {
+    // this.handleChange('London')
   }
 
   render() {
-    const location = 'London';
+    const { location } = this.state;
 
     return (
       <KeyboardAvoidingView style={styles.container} behavior='padding'>
@@ -40,7 +44,10 @@ class App extends Component {
           Light Cloud
           </Text>
           <Text style={[styles.largeText, styles.textStyle]}>24°</Text>
-          <SearchInput placeholder='Search Any City' />
+          <SearchInput 
+            placeholder='Search Any City'
+            onSubmit={this.handleUpdateLocation} 
+          />
         </View>
         </ImageBackground>
       </KeyboardAvoidingView>
