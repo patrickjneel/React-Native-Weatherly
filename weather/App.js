@@ -8,18 +8,27 @@ import {
   Platform, 
 } from 'react-native';
 
-import getImageForWeather from './utils/water.jpg';
-
 import SearchInput from './components/SearchInput';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      location: 'Los Angeles'
+    };
+  }
+
+  componentDidMount() {
+    
+  }
+
   render() {
     const location = 'Pound Town';
 
     return (
       <KeyboardAvoidingView style={styles.container} behavior='padding'>
         <ImageBackground
-          source={require('./utils/sun.png')}
+          source={require('./utils/rain.jpg')}
           style={styles.imageContainer}
           imageStyle={styles.image}
         >
@@ -52,6 +61,7 @@ const styles = StyleSheet.create({
       height: null,
       width: null,
       resizeMode: 'cover',
+      opacity: 0.6
     },
     textStyle: {
       color: 'white',
