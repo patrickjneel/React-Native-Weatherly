@@ -19,11 +19,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    
+
   }
 
   render() {
-    const location = 'Pound Town';
+    const location = 'London';
 
     return (
       <KeyboardAvoidingView style={styles.container} behavior='padding'>
