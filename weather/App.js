@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import SearchInput from './components/SearchInput';
+import helper from './utils/helper';
 
 class App extends Component {
   constructor(props) {
@@ -23,23 +24,20 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // this.handleChange('London')
+    this.handleUpdateLocation('London')
   }
 
   render() {
     const { location } = this.state;
-
     return (
       <KeyboardAvoidingView style={styles.container} behavior='padding'>
         <ImageBackground
-          source={require('./utils/rain.jpg')}
+          source={helper('sun')}
           style={styles.imageContainer}
           imageStyle={styles.image}
         >
         <View style={styles.detailsContainer}>
-          <Text style={[styles.largeText, styles.textStyle]}>
-            {location}
-          </Text>
+          <Text style={[styles.largeText, styles.textStyle]}>{location}</Text>
           <Text style={[styles.smallText, styles.textStyle]}>
           Light Cloud
           </Text>
