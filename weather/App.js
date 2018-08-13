@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <KeyboardAvoidingView style={styles.container} behavior='padding'>
         <ImageBackground
-          source={helper('sun')}
+          source={helper('rain')}
           style={styles.imageContainer}
           imageStyle={styles.image}
         >
@@ -41,7 +41,7 @@ class App extends Component {
           <Text style={[styles.smallText, styles.textStyle]}>
           Light Cloud
           </Text>
-          <Text style={[styles.largeText, styles.textStyle]}>24°</Text>
+          <Text style={[styles.largeText, styles.textStyle]}>24° F</Text>
           <SearchInput 
             placeholder='Search Any City'
             onSubmit={this.handleUpdateLocation} 
